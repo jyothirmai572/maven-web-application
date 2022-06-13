@@ -4,6 +4,7 @@ def mavenHome = tool name: "maven 3.8.4"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 echo "The job name is: ${env.JOB_NAME}"
     try{
+sendSlackNotifications('STARTED')
 stage('Checkout code')
 {
 git branch: 'development', credentialsId: 'd7ccb245-3404-4d9b-a469-f6537133f4f6', url: 'https://github.com/jyothirmai572/maven-web-application.git'
