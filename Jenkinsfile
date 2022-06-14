@@ -15,11 +15,6 @@ stage('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
 
-stage('Execute SonarQubeReport')
-{
-sh "${mavenHome}/bin/mvn sonar:sonar"
-}
-
 stage('UploadingArtifactstoNexus')
 {
 sh "${mavenHome}/bin/mvn deploy"
@@ -64,5 +59,5 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary)
+  slackSend (color: colorCode, message: summary, channel: 'walmart')
 }
