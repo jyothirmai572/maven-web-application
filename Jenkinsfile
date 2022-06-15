@@ -15,10 +15,10 @@ stage('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
         
-/*stage('Execute SonarQubeReport')
+stage('Execute SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn sonar:sonar"
-}*/
+}
 
 stage('UploadingArtifactstoNexus')
 {
