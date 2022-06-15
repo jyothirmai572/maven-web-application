@@ -35,14 +35,14 @@ sh "mvn clean package"
 }
 
 //Sonarqube report
-/*
+
 stage('Execute SonarQubeReport')
 {
 steps{
 
 sh "mvn sonar:sonar"
 }
-}*/
+}
 
 //Uploading Artifacts to Nexus
 stage('UploadingArtifactstoNexus')
