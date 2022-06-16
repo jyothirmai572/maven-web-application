@@ -42,7 +42,7 @@ sshagent(['12845092-ffb5-4c7d-acc7-df0a45b361d1']) {
 
 }
 
-def sendSlackNotifications(String buildStatus = 'STARTED') {
+/*def sendSlackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
@@ -67,4 +67,4 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   // Send notifications
   slackSend (color: colorCode, message: summary, channel: 'walmart')
 }
-
+*/
