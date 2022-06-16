@@ -25,7 +25,7 @@ stage('UploadingArtifactstoNexus')
 {
 sh "${mavenHome}/bin/mvn deploy"
 }
-    }        
+          
     
 /*
 stage('DeployAppIntoTomcatServer')
@@ -41,9 +41,9 @@ sshagent(['12845092-ffb5-4c7d-acc7-df0a45b361d1']) {
     finally{
         sendSlackNotifications(currentBuild.result)
     }
-
+*/
 }
-
+/*
 def sendSlackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
@@ -70,3 +70,4 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   slackSend (color: colorCode, message: summary, channel: 'walmart')
 }
 */
+
