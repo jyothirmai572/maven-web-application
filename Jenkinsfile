@@ -1,3 +1,4 @@
+@Library('sharedlbsmt') _
 node {
     
 def mavenHome = tool name: "maven 3.8.4"
@@ -24,7 +25,9 @@ stage('UploadingArtifactstoNexus')
 {
 sh "${mavenHome}/bin/mvn deploy"
 }
-
+    }        
+    
+/*
 stage('DeployAppIntoTomcatServer')
 {
 sshagent(['12845092-ffb5-4c7d-acc7-df0a45b361d1']) {
@@ -66,3 +69,4 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   // Send notifications
   slackSend (color: colorCode, message: summary, channel: 'walmart')
 }
+*/
